@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEON HAND HUD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <div class="grid-layer" aria-hidden="true"></div>
+      <canvas id="hudCanvas"></canvas>
+
+
+      <section class="panel coords-panel" aria-live="polite">
+        <h2></h2>
+        <p id="coordX"></p>
+        <p id="coordY"></p>
+      </section>
+
+      <section class="panel status-panel" aria-live="polite">
+        <h2>SYSTEM STATUS</h2>
+        <p id="statusText">INITIALIZING...</p>
+      </section>
+
+      <!-- Privacy mode: camera is used for processing only and never rendered. -->
+      <video id="video" playsinline muted></video>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
